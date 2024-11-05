@@ -1,15 +1,17 @@
-import Image from 'next/image'
+import { UserButton } from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
+const HomePage = async () => {
+  const { userId } = await auth()
+  if (!userId) {
+    redirect('/login')
+  }
   return (
     <div>
-      <h1>Home</h1>
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        width={72}
-        height={16}
-      />
+      <UserButton showName />
     </div>
   )
 }
+
+export default HomePage
