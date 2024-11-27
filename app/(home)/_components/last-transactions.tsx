@@ -6,6 +6,7 @@ import { formatCurrency } from '@/app/_utils/currency'
 import { Transaction, TransactionType } from '@prisma/client'
 import Image from 'next/image'
 import Link from 'next/link'
+
 interface LastTransactionsProps {
   lastTransactions: Transaction[]
 }

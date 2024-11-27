@@ -80,9 +80,9 @@ export const getDashboard = async (month: string) => {
     })
   ).map((category) => ({
     category: category.category,
-    totalAmount: Number(category._sum.amount),
+    totalAmount: Number(category._sum?.amount),
     percentageOfTotal: Math.round(
-      (Number(category._sum.amount) / Number(expensesTotal)) * 100,
+      (Number(category._sum?.amount) / Number(expensesTotal)) * 100,
     ),
   }))
 

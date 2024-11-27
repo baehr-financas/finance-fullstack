@@ -1,6 +1,6 @@
 'use client'
 
-import { createStripeCheckout } from '@/app/_actions/create-stripe-checkout'
+import { createStripeCheckout } from '@/app/subscription/_actions/create-stripe-checkout'
 import { Button } from '@/app/_components/ui/button'
 import { useUser } from '@clerk/nextjs'
 import { loadStripe } from '@stripe/stripe-js'
