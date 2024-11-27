@@ -32,6 +32,9 @@ export const upsertTransaction = async (params: UpsertTransactionParams) => {
     },
     update: { ...params, userId },
     create: { ...params, userId },
+    where: {
+      id: params?.id ?? '',
+    },
   })
 
   revalidatePath('/transactions')
